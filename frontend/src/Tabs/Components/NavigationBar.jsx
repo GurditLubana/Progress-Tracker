@@ -5,10 +5,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 30ef237b5b7bb1804bcdada5efb21a3f556000f9
 const NavigationBar = () => {
   return (
     <>
