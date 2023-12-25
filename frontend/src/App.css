@@ -9,8 +9,21 @@
 .modal-footer{
     
     padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 2) !important;
+    
 }
 
 .left-side {
     border-right: 1px solid #ddd; /* Thin line for the divider */
   }
+
+.textarea-modal-style {
+  background-color: #FFF; /* match modal body background */
+  border: 1px solid lightgrey; /* match modal body border */
+  border-radius: 0.3rem; /* typically, Bootstrap default */
+  min-height: 100px; /* or as per your design */
+  /* Additional styling as needed */
+}
+
+.modal-body {
+  padding: 0 !important;
+}

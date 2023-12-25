@@ -1,20 +1,23 @@
 // import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
-import SubmitReport from "./Components/SubmitReport"
+import SubmitReport from "./Components/SubmitReport";
+import PrevLog from "./Components/PrevLog";
+import { useState } from "react";
 
 const ProgressTab = () => {
-  return (
-    <Container fluid>
-      <Row>
-        <Col xs={12} md={7} className="left-side">
-          <SubmitReport></SubmitReport>
-        </Col>
-        <Col xs={12} md={5} className="right-side">
-          {/* Content for the graph */}
-        </Col>
-      </Row>
-    </Container>
-  )
-}
+  const [logList, setLogList] = useState([])
 
-export default ProgressTab
+  function addPrevLogs(todaysLog){
+    setLogList(currentLogList =>{return [
+      ...currentLogList, {todaysLog}
+    ]})
+    console.log(logList)
+  }
+  return (
+    <>
+      <SubmitReport addLog={addPrevLogs}/>
+      <PrevLog list = {logList}></PrevLog>
+    </>
+  );
+};
+
+export default ProgressTab;
