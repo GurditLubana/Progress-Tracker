@@ -1,23 +1,33 @@
-// import React from 'react'
 import SubmitReport from "./Components/SubmitReport";
 import PrevLog from "./Components/PrevLog";
-import { useState } from "react";
+// import { useEffect,useState } from "react";
+import { useEffect} from "react";
+import axios from "axios";
 
-const ProgressTab = () => {
-  const [logList, setLogList] = useState([])
+function ProgressTab(){
 
-  function addPrevLogs(todaysLog){
-    setLogList(currentLogList =>{return [
-      ...currentLogList, {todaysLog}
-    ]})
-    console.log(logList)
-  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8081/');
+        const result = response.data;
+        console.log(result);
+      } catch (error) {
+        console.error('Error fetching data:', error.message);
+      }
+    };
+
+    fetchData();
+  }, [])
+
+
   return (
     <>
-      <SubmitReport addLog={addPrevLogs}/>
-      <PrevLog list = {logList}></PrevLog>
+      <SubmitReport />
+      <PrevLog></PrevLog>
     </>
   );
-};
+}
 
 export default ProgressTab;

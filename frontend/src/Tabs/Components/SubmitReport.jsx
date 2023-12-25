@@ -5,14 +5,20 @@ import axios from 'axios'
 
 function SubmitReport() {
   const [newResponse, setResponse] = useState("")
-  function handleSubmit(e){
-    e.preventDefault()
-    setResponse("")
-    axios.post('http://localhost:3000/progresstracker/submitreport',newResponse)
-    .then(result => console.log(result))
+  const handleSubmit = async () => {
+    try {
+      // Make a POST request to the server to create a new report
+      await axios.post('http://localhost:8081/api/reports', {
+        report: newResponse,
+      });
 
-     
-  }
+      // Clear the input field or perform any other necessary actions
+      setResponse('');
+    } catch (error) {
+      console.error('Error submitting report:', error.message);
+    }
+  };
+
   return (
     <div
       className="modal show"
