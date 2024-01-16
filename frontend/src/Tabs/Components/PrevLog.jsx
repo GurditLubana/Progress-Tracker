@@ -2,6 +2,7 @@
 import EachLog from "./EachLog";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import '../../App.css';
 
 const PrevLog = () => {
   const [logList, setLogList] = useState([]);

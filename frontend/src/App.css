@@ -1,29 +1,49 @@
-.white-text , #basic-nav-dropdown, .header-footer{
+.white-text , #basic-nav-dropdown, .headerFooter, .warningToast{
     color: white !important;
   }
   
-.navBar, .header-footer{
-    background-color: darkred ;
+.navBar, .headerFooter{
+    background-color: darkred !important;
 }
 
-.modal-footer{
+.headerFooter{
     
-    padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 2) !important;
+    padding: 10%;
     
 }
 
+.warningToast{
+background-color: darkred !important;
+color: white;
+}
+.eachReport{
+  margin-bottom: 200px;
+}
 .left-side {
     border-right: 1px solid #ddd; /* Thin line for the divider */
   }
 
 .textarea-modal-style {
-  background-color: #FFF; /* match modal body background */
-  border: 1px solid lightgrey; /* match modal body border */
-  border-radius: 0.3rem; /* typically, Bootstrap default */
-  min-height: 100px; /* or as per your design */
-  /* Additional styling as needed */
+  background-color: #FFF; 
+  border: 1px solid lightgrey; 
+  border-radius: 0.3rem; 
+  min-height: 100px; 
 }
 
-.modal-body {
-  padding: 0 !important;
+.form-control {
+
+min-height: 150px !important;
+}
+
+.modal-box{
+  padding : 10px
+}
+
+
+.accordion-button, .accordion-button:not(.collapsed) {
+  
+  margin-bottom: 10px ;
+  color: white !important;
+  background-color: darkred !important;
+  
 }

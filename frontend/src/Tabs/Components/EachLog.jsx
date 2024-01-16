@@ -1,6 +1,6 @@
 import Accordion from "react-bootstrap/Accordion";
 import PropTypes from "prop-types";
-// import React from 'react';
+import '../../App.css';
 
 const EachLog = ({ data }) => {
   function formatDate(data) {
@@ -13,7 +13,7 @@ const EachLog = ({ data }) => {
     return formattedDate;
   }
   return (
-    <Accordion>
+    <Accordion >
       <Accordion.Item eventKey="0">
         <Accordion.Header>{formatDate(data)}</Accordion.Header>
         <Accordion.Body>{data.Report}</Accordion.Body>
@@ -23,7 +23,7 @@ const EachLog = ({ data }) => {
 };
 
 EachLog.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default EachLog;

@@ -33,7 +33,7 @@ async function insertLog(date, report) {
     // Execute the query with the provided values
     const [rows] = await conn.execute(query, [date, report]);
 
-    console.log("Log inserted successfully:", rows);
+    console.log("New Log added on", date , ":", report);
   } catch (error) {
     console.error("Error inserting log:", error.message);
   }
