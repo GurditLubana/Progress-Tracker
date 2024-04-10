@@ -1,4 +1,4 @@
-![](demo1.gif)
+![](demo.gif)
 
 
 # Full-Stack Progress Tracker Application
