@@ -8,7 +8,7 @@ app.use(cors());
 const conn = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "9878059867gG@",
+  password: "*********",
   database: "progress_tracker",
   waitForConnections: true,
   connectionLimit: 10,
@@ -27,10 +27,8 @@ conn
 
 async function insertLog(date, report) {
   try {
-    // Using placeholders in the query
     const query = "INSERT INTO `loglist` (`Date`, `Report`) VALUES (?, ?)";
 
-    // Execute the query with the provided values
     const [rows] = await conn.execute(query, [date, report]);
 
     console.log("New Log added on", date , ":", report);
@@ -40,13 +38,14 @@ async function insertLog(date, report) {
 }
 
 app.use(express.json());
+
 app.post("/api/reports", (req, res) => {
   const { report } = req.body;
   const currentDate = new Date();
   const formattedDate = currentDate
     .toISOString()
     .slice(0, 19)
-    .replace("T", " "); // Format date as 'YYYY-MM-DD HH:mm:ss'
+    .replace("T", " "); 
 
   insertLog(formattedDate, report);
   //   console.log("New report received:", report);

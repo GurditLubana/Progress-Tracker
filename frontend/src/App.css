@@ -20,7 +20,7 @@ color: white;
   margin-bottom: 200px;
 }
 .left-side {
-    border-right: 1px solid #ddd; /* Thin line for the divider */
+    border-right: 1px solid #ddd; 
   }
 
 .textarea-modal-style {
